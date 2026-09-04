@@ -1,8 +1,8 @@
 # Atividade - Refinamento de Prompts
 
 ## Identificação
-- Nome: Gabi Dias
-- Turma: Ciência da Computação
+- Nome: Gabriella Dias
+- Turma: Ciência da Computação - D1
 - Data: 03/09
 - Ferramenta de IA utilizada: Google Gemini
 
