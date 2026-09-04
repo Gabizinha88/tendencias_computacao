@@ -1,4 +1,4 @@
-# Atividade - Refinamento de Prompts
+# Atividade - Refinamento de Prompts Aula 03
 
 ## Identificação
 - Nome: Gabriella Dias
