@@ -1,0 +1,319 @@
+# Programação Assistida e Automação com IA
+
+## Identificação
+
+- Nome: Gabriella Dias
+- Turma: d1
+- Data: 10\09
+- Ferramenta de IA utilizada: ChatGPT
+- Ambiente de desenvolvimento: Google Colab
+- Linguagem: Python
+
+---
+
+## 1. Problema
+
+Desenvolver uma calculadora simples em Python capaz de realizar as quatro operações matemáticas básicas:
+
+- soma;
+- subtração;
+- multiplicação;
+- divisão.
+
+A primeira versão será criada de forma simples e, posteriormente, será analisada e aprimorada com o auxílio de Inteligência Artificial.
+
+---
+
+## 2. Entrada
+
+O programa receberá:
+
+- dois valores numéricos informados pelo usuário;
+- uma opção correspondente à operação matemática desejada.
+
+Exemplo:
+
+- Primeiro número: 10
+- Segundo número: 5
+- Operação: divisão
+
+---
+
+## 3. Processamento
+
+O programa deverá:
+
+1. receber dois números;
+2. receber a operação escolhida pelo usuário;
+3. verificar qual operação foi selecionada;
+4. realizar o cálculo correspondente;
+5. apresentar o resultado.
+
+Na versão inicial, o programa utilizará estruturas condicionais `if` e `elif`.
+
+---
+
+## 4. Saída Esperada
+
+O programa deverá exibir o resultado da operação selecionada.
+
+Exemplo:
+
+Entrada:
+
+10 e 5
+
+Operação:
+
+Divisão
+
+Saída:
+
+Resultado: 2.0
+
+---
+
+## 5. Prompt Utilizado
+
+Após desenvolver a primeira versão, utilizei o seguinte prompt para solicitar apoio da IA:
+
+> Estou desenvolvendo uma calculadora básica em Python.
+> Ela realiza soma, subtração, multiplicação e divisão utilizando estruturas condicionais.
+>
+> Analise meu código.
+>
+> 1. Identifique possíveis problemas.
+> 2. Explique os problemas encontrados.
+> 3. Sugira melhorias de organização.
+> 4. Verifique como tratar divisão por zero.
+> 5. Mantenha o código simples e compreensível para um estudante iniciante.
+>
+> Depois apresente uma versão melhorada do código.
+
+---
+
+## 6. Código Inicial
+
+```python
+print("CALCULADORA")
+
+numero1 = float(input("Digite o primeiro número: "))
+numero2 = float(input("Digite o segundo número: "))
+
+print("1 - Somar")
+print("2 - Subtrair")
+print("3 - Multiplicar")
+print("4 - Dividir")
+
+opcao = input("Escolha uma operação: ")
+
+if opcao == "1":
+    resultado = numero1 + numero2
+    print("Resultado:", resultado)
+
+elif opcao == "2":
+    resultado = numero1 - numero2
+    print("Resultado:", resultado)
+
+elif opcao == "3":
+    resultado = numero1 * numero2
+    print("Resultado:", resultado)
+
+elif opcao == "4":
+    resultado = numero1 / numero2
+    print("Resultado:", resultado)
+
+else:
+    print("Opção inválida")
+
+
+7. Análise Crítica da Primeira Versão
+
+A primeira versão atende ao objetivo principal de realizar as quatro operações matemáticas.
+
+Entretanto, durante a análise foram identificados alguns pontos que poderiam ser melhorados:
+
+as operações estão diretamente dentro das estruturas condicionais;
+não existe separação do código em funções;
+não existe tratamento para divisão por zero;
+se o usuário digitar uma letra no lugar de um número, o programa gera um erro;
+o código pode ficar mais organizado e reutilizável.
+
+A Inteligência Artificial foi utilizada para sugerir melhorias, mas as alterações foram analisadas antes de serem adicionadas ao programa.
+
+8. Casos de Teste
+Teste 1 — Caso Normal
+
+Entrada:
+
+primeiro número: 10
+segundo número: 5
+operação: soma
+
+Resultado esperado:
+
+15
+
+Resultado obtido:
+
+15
+
+Status:
+
+✅ Funcionou corretamente.
+
+Teste 2 — Caso Limite
+
+Entrada:
+
+primeiro número: 10
+segundo número: 0
+operação: divisão
+
+Resultado esperado:
+
+O programa deve informar que não é possível dividir por zero.
+
+Resultado da versão inicial:
+
+O programa apresentou um erro de divisão por zero.
+
+Status:
+
+❌ Problema identificado.
+
+Teste 3 — Caso de Erro
+
+Entrada:
+
+primeiro valor: abc
+
+Resultado esperado:
+
+O programa deve informar que é necessário digitar um número.
+
+Resultado da versão inicial:
+
+O programa apresentou ValueError.
+
+Status:
+
+❌ Problema identificado.
+
+9. Problemas Encontrados
+
+Durante os testes foram identificados dois problemas principais:
+
+divisão por zero;
+entrada de valores não numéricos.
+
+Esses problemas mostraram a necessidade de adicionar tratamento de erros ao programa.
+
+10. Prompt de Refatoração
+
+Após os testes, utilizei o seguinte prompt:
+
+Atue como revisor de código Python.
+
+O programa abaixo já realiza soma, subtração, multiplicação e divisão.
+
+Analise considerando:
+
+clareza;
+organização;
+nomes das funções;
+modularização;
+tratamento de erros;
+legibilidade.
+
+Não altere o comportamento esperado da calculadora.
+
+Apresente:
+
+problemas encontrados;
+sugestões de melhoria;
+código refatorado;
+justificativa das alterações.
+
+Mantenha a solução adequada para um estudante iniciante.
+
+11. Código Refatorado
+def somar(a, b):
+    return a + b
+
+
+def subtrair(a, b):
+    return a - b
+
+
+def multiplicar(a, b):
+    return a * b
+
+
+def dividir(a, b):
+    if b == 0:
+        return "Erro: não é possível dividir por zero."
+    return a / b
+
+
+print("=== CALCULADORA ===")
+
+try:
+    numero1 = float(input("Digite o primeiro número: "))
+    numero2 = float(input("Digite o segundo número: "))
+
+    print("\n1 - Somar")
+    print("2 - Subtrair")
+    print("3 - Multiplicar")
+    print("4 - Dividir")
+
+    opcao = input("Escolha uma operação: ")
+
+    if opcao == "1":
+        resultado = somar(numero1, numero2)
+
+    elif opcao == "2":
+        resultado = subtrair(numero1, numero2)
+
+    elif opcao == "3":
+        resultado = multiplicar(numero1, numero2)
+
+    elif opcao == "4":
+        resultado = dividir(numero1, numero2)
+
+    else:
+        resultado = "Erro: opção inválida."
+
+    print("Resultado:", resultado)
+
+except ValueError:
+    print("Erro: digite apenas números.")
+12. Comparação entre as Versões
+Critério	Versão Inicial	Versão Refatorada
+Funcionamento correto	3	5
+Clareza	4	5
+Organização	3	5
+Legibilidade	4	5
+Tratamento de erros	1	5
+Facilidade de manutenção	3	5
+
+A versão inicial era suficiente para executar operações básicas, porém apresentava falhas em situações específicas.
+
+A versão refatorada ficou mais organizada, principalmente pela separação das operações em funções e pela inclusão de tratamento de erros.
+
+13. Reflexão
+Onde a IA mais ajudou?
+
+A IA foi mais útil na refatoração e no tratamento de erros. Ela ajudou a identificar situações que eu não havia considerado inicialmente, como divisão por zero e entradas inválidas.
+
+Onde a IA errou?
+
+Durante esta atividade, não identifiquei um erro grave na sugestão utilizada. Mesmo assim, foi necessário analisar as alterações antes de incorporá-las ao programa.
+
+O que precisei modificar?
+
+Foi necessário organizar o código em funções e adicionar tratamento de exceções para impedir que o programa encerrasse quando recebesse uma entrada inválida.
+
+Consigo explicar o código?
+
+Sim. O programa recebe dois números, identifica a operação selecionada, chama a função correspondente e apresenta o resultado. O bloco try/except é utilizado para tratar entradas que não podem ser convertidas para números.
