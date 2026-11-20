@@ -108,7 +108,7 @@ Cada decisão gera: motivo (código) + justificativa + ação + uso de IA + flag
 | Tratamento inconsistente | ✅ idêntico para todos os perfis |
 
 **29/29 aprovados** · mutação: 4/4 defeitos detectados
-<span class="pequeno">Não executados aqui: Gemini real, Make e Web App (dependem de credenciais; roteiro em docs/configuracao.md)</span>
+<span class="pequeno">Integração real (Forms → Make → Apps Script → Gemini → Gmail): 8/8 testes aprovados em 19/11/2026</span>
 
 **Demo ao vivo:** `npm run demo`
 

@@ -1,6 +1,6 @@
 # Configuração do AgendaFácil 2.0 (Forms + Sheets + Apps Script + Make + Gemini)
 
-> Estes passos dependem das contas Google, Make e Gemini do grupo e **não foram executados** pelo assistente que gerou o código. Marque cada item do checklist ao concluir e registre evidências (prints) em `docs/evidencias/`.
+> Estes passos foram executados nas contas do grupo em 19/11/2026 (resultados em [testes.md](testes.md#testes-de-integração-executados-em-contas-reais)). Ajustes necessários na implantação real: propriedade `GEMINI_MODELO = gemini-3.5-flash` (o modelo padrão retornou HTTP 404) e, no módulo HTTP do Make, **Follow all redirect = Sim** (sem isso o Make não segue o redirecionamento do Apps Script no POST e a resposta vem vazia).
 > **Use apenas dados fictícios** nos testes e **nunca** cole chaves ou tokens em arquivos do repositório.
 
 ## Visão geral

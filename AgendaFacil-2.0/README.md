@@ -9,8 +9,8 @@
 |---|---|
 | Lógica do agente (4 camadas), prompts, guardrails, memória, registro | ✅ Implementada e **testada localmente**: 29 testes automatizados, todos aprovados ([evidência](docs/evidencias/saida-testes.txt)) |
 | Demonstração local ponta a ponta (sem IA) | ✅ Executada ([saída](docs/evidencias/saida-demo-sem-ia.txt)) |
-| Chamada real à API do Gemini | ⚠️ Código pronto, **não executado** neste ambiente (sem chave). Testado com respostas simuladas no formato da API |
-| Implantação no Google Apps Script, Google Forms e Make | ⚠️ Código e roteiro prontos, **não validados** em contas reais. Passo a passo em [docs/configuracao.md](docs/configuracao.md) |
+| Chamada real à API do Gemini | ✅ Executada em 19/11/2026 com chave real (modelo `gemini-3.5-flash`): interpretação e redação aprovadas pelo guardrail |
+| Implantação no Google Apps Script, Google Forms e Make | ✅ Implantada e validada em contas reais em 19/11/2026: 8 testes de integração ponta a ponta, todos aprovados ([resultados](docs/testes.md#testes-de-integração-executados-em-contas-reais)). Passo a passo em [docs/configuracao.md](docs/configuracao.md) |
 
 ---
 
@@ -347,7 +347,7 @@ Mais 19 testes complementares: regras (R01–R12), privacidade (P01–P06) e rep
 
 **Verificação de mutação** (para conferir que os testes detectam erros): quebramos de propósito, em uma cópia, (1) a verificação de ocupação, (2) a detecção de injeção, (3) o guardrail e (4) o controle de acesso da consulta. Em todos os casos, ao menos um teste falhou (7, 1, 2 e 1 falhas, respectivamente).
 
-**Não executados** (dependem de contas e credenciais): chamada real ao Gemini, implantação do Web App, cenário do Make, envio de e-mail e Forms real. O roteiro para executá-los e registrar os resultados está em [docs/testes.md](docs/testes.md#testes-de-integração-não-executados).
+**Testes de integração em contas reais (19/11/2026):** Forms → Make → Apps Script (Web App) → Gemini → Gmail, 8 cenários, **8 aprovados**: horário disponível, duplicidade, horário ocupado com alternativas, escolha de alternativa com protocolo anterior, revisão humana, manipulação das instruções, sem chave do Gemini e token inválido. A primeira rodada revelou um bug de data/hora na gravação da planilha, corrigido em `10_RepositorioPlanilha.js` antes da rodada final. Detalhes em [docs/testes.md](docs/testes.md#testes-de-integração-executados-em-contas-reais).
 
 ## 15. Três vantagens e três limitações
 
@@ -357,7 +357,7 @@ Mais 19 testes complementares: regras (R01–R12), privacidade (P01–P06) e rep
 3. **Baixo custo e reaproveitamento:** mantém Forms, Sheets e Make; o Apps Script é gratuito; os testes rodam sem nenhuma conta externa.
 
 **Limitações**
-1. **Integrações externas não validadas** neste ambiente (Gemini real, Make, Web App). A validação depende de configuração nas contas do grupo.
+1. **Tempo de resposta:** no plano gratuito, o Make verifica o formulário a cada 15 minutos e cada pedido leva cerca de 1 minuto para ser processado (a maior parte é a chamada ao Gemini). Instabilidades da API (ex.: HTTP 503) fazem o agente usar a mensagem-modelo.
 2. **Escolha de alternativa exige novo formulário:** não há conversa em tempo real, e a alternativa pode ser ocupada antes da escolha (o agente reverifica e avisa).
 3. **Heurísticas limitadas:** a detecção de injeção e de dados sensíveis usa padrões; ataques criativos podem passar pelo filtro. Nesse caso, porém, o máximo que conseguem é influenciar o texto, que ainda passa pelo guardrail, e nunca a decisão. O Google Sheets também não é um banco de dados (limites de volume e concorrência).
 
