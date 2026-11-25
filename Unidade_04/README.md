@@ -6,7 +6,12 @@
 **Atividades da Unidade 4 (novembro de 2026) · Valor: até 5,0 pontos (A1)**
 Profa. Kadidja Valéria
 
-**Aluna:** Gabriella Oliveira de Souza Dias
+**Projeto em dupla:**
+
+| Nome | RGM |
+| --- | --- |
+| Gabriella Oliveira de Souza Dias | 34260641 |
+| Maria Cecília Araújo Lemos | 33478406 |
 
 **Projeto entregue:** [AgendaFácil 2.0 — Agente Inteligente de Agendamentos](AgendaFacil-2.0/)
 
