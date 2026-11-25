@@ -1,6 +1,6 @@
 # AgendaFácil 2.0 — Agente Inteligente de Agendamentos
 
-> Evolução do [AgendaFácil 1.0](../Agenda%20Facil/) para um **agente de IA com arquitetura de quatro camadas**, decisões verificáveis, memória controlada e princípios de privacidade, equidade, transparência e responsabilidade.
+> Evolução do [AgendaFácil 1.0](../../Unidade_03/AgendaFacil/) para um **agente de IA com arquitetura de quatro camadas**, decisões verificáveis, memória controlada e princípios de privacidade, equidade, transparência e responsabilidade.
 > Disciplina: Engenharia de Prompt e Aplicações em IA · Projeto acadêmico · Dados de demonstração 100% fictícios.
 
 **Status deste protótipo (honesto):**
@@ -405,6 +405,6 @@ Para testar o Gemini real localmente, copie `.env.example` para `.env` (não ver
 - GOOGLE. **Gemini API — Termos adicionais de serviço**. https://ai.google.dev/gemini-api/terms
 - GOOGLE. **Apps Script — Web Apps; LockService; PropertiesService**. https://developers.google.com/apps-script
 - MAKE. **HTTP app documentation**. https://apps.make.com/http
-- AgendaFácil 1.0 — README, checklist (PDF) e apresentação, pasta [`../Agenda Facil`](../Agenda%20Facil/).
+- AgendaFácil 1.0 — README, checklist (PDF) e apresentação, pasta [`Unidade_03/AgendaFacil`](../../Unidade_03/AgendaFacil/).
 
 **Uso de IA neste projeto:** o código, os testes e a documentação do 2.0 foram desenvolvidos com apoio de um assistente de IA (Claude, Anthropic), com revisão da equipe. Os resultados de teste aqui registrados foram efetivamente executados; o que não foi executado está marcado como tal.
